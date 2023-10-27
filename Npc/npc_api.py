@@ -29,11 +29,11 @@ class Script:
         # Invalid id
         return -1
 
-    def exit_state(self, functionId: int):
+    def exit_state(self):
         """Called when the script is exited."""
         return
 
-    def enter_state(self, functionId: int):
+    def enter_state(self):
         """Called when the script is entered."""
         return
 
@@ -53,6 +53,9 @@ class Script:
     def has_mesos(self, amount: int) -> bool:
         return self.ctx.HasMesos(amount)
 
+    def consume_meso(self, amount: int):
+        return self.ctx.ConsumeMeso(amount)
+
     def level(self) -> int:
         return self.ctx.Level()
 
@@ -60,7 +63,13 @@ class Script:
         return self.ctx.Job()
 
     def job_code(self) -> int:
-        return self.ctx.Job()//10
+        return self.ctx.Job() // 10
 
     def current_map(self) -> int:
         return self.ctx.CurrentMap()
+
+    def has_death_penalty(self) -> bool:
+        return self.ctx.HasDeathPenalty()
+
+    def clear_death_penalty(self):
+        self.ctx.ClearDeathPenalty()

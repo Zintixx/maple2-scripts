@@ -5,7 +5,15 @@ import random
 
 class Main(Script):
     def first(self) -> int:
-        # TODO: Job 1
-        return random.choice([10])
+        if self.has_death_penalty():
+            return 1
+        return 10
+
+        def exit_state(self):
+            if functionId == 1:
+                self.move_player(99)
+                self.open_dialog("BeautyShopDialog", "hair,styleSave")
+                return
+        return
 
 
